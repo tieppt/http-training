@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContactService } from './contact.service';
 import { ContactClientService } from './contact-client.service';
 import { coreInterceptorProvider } from './core-interceptor.service';
-// import { requestOptionsProvider } from './core-request-options.service';
+import { requestOptionsProvider } from './core-request-options.service';
 
 @NgModule({
   declarations: [
@@ -43,8 +43,8 @@ import { coreInterceptorProvider } from './core-interceptor.service';
   providers: [
     ContactService,
     ContactClientService,
-    // requestOptionsProvider,
-    // coreInterceptorProvider
+    requestOptionsProvider,
+    coreInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

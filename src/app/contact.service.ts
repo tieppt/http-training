@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, URLSearchParams } from '@angular/http';
+import { Headers, Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { IContact } from './models/contact';
@@ -13,12 +13,11 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ContactService {
   readonly API_URL = 'http://localhost:8910/api/contacts';
-  constructor(private http: Http) { }
+  constructor(private http: Http, private reqOptions: RequestOptions) { }
 
   getListContacts() {
-    /*
-    const headers = new Headers();
-    headers.set('Content-Type', 'application/json');
+    const headers = this.reqOptions.headers;
+    // headers.set('Content-Type', 'application/json');
     headers.set('Authorization', 'Basic token-here');
 
     const params = new URLSearchParams();
@@ -28,8 +27,9 @@ export class ContactService {
       headers: headers,
       params: params
     })
-    */
+    /*
     return this.http.get(this.API_URL)
+    */
       .map(res => res.json())
       .catch(err => {
         return Observable.of(err);

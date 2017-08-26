@@ -14,7 +14,7 @@ export class CreateContactComponent implements OnInit {
   cform: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private contactSrv: ContactClientService
+    private contactSrv: ContactService
     ) {}
 
   ngOnInit() {

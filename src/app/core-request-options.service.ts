@@ -13,4 +13,7 @@ export class CoreRequestOptionsService extends BaseRequestOptions {
 
 }
 
-export const requestOptionsProvider = { provide: RequestOptions, useClass: CoreRequestOptionsService };
+export const requestOptionsProvider = {
+  provide: RequestOptions,
+  useClass: CoreRequestOptionsService
+};
